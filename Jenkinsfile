@@ -6,6 +6,11 @@ pipeline {
         }
      }
     
+     // Définir un déclencheur pour exécuter le pipeline toutes les 3 minutes
+    triggers {
+        cron('H/3 * * * *') // Toutes les 3 minutes
+    }
+    
     stages {
         stage('Install dependencies') {
             steps {
